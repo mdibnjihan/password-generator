@@ -1,0 +1,44 @@
+﻿<Window x:Name="Password_Generator" x:Class="Password_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password_Generator"
+        mc:Ignorable="d"
+        Title="Password Generator" Height="523" Width="588" Icon="/password.png" ResizeMode="CanMinimize">
+    <Grid>
+        <Label x:Name="Welcome_Message" Content="Welcome to password generator" HorizontalAlignment="Left" Margin="32,34,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="Welcome_Message_Details" Content="A portable application to generate passwords in Windows." HorizontalAlignment="Left" Margin="32,76,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Generated_Password" Content="Your generated password" HorizontalAlignment="Left" Margin="38,217,0,0" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2,2,2,2" Width="316" FontWeight="Bold" HorizontalContentAlignment="Center">
+            <Label.Background>
+                <SolidColorBrush Color="#FFB9D1EA"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="Regenerate_Password" Content="Regenerate" HorizontalAlignment="Left" Margin="466,217,0,0" VerticalAlignment="Top" Height="30" Width="76" Click="Regenerate_Password_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF3F3F3"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Copy_Button" Content="Copy" HorizontalAlignment="Left" Margin="373,217,0,0" VerticalAlignment="Top" Height="30" Width="76" BorderThickness="1,1,1,1" BorderBrush="#FF707070" Click="Copy_Button_Click"/>
+        <Slider x:Name="Password_Length_Slider" HorizontalAlignment="Left" Margin="38,375,0,0" VerticalAlignment="Top" Width="316" Maximum="64" Minimum="8" Value="16" ValueChanged="Password_Length_Slider_ValueChanged" SmallChange="1"/>
+        <Label x:Name="Settings_Label" Content="Settings" HorizontalAlignment="Left" Margin="30,283,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="Generator_Text_1" Content="A random password is generated according to your settings." HorizontalAlignment="Left" Margin="32,137,0,0" VerticalAlignment="Top" Width="328" Height="30"/>
+        <Label x:Name="Generator_Text_2" Content="Click &quot;Copy&quot; to copy your generated password." HorizontalAlignment="Left" Margin="32,152,0,0" VerticalAlignment="Top" Width="328" Height="30"/>
+        <Label x:Name="Generator_Text_3" Content="Click &quot; Regenerate&quot; to regenerate a new password." HorizontalAlignment="Left" Margin="32,167,0,0" VerticalAlignment="Top" Width="328" Height="30"/>
+        <Label x:Name="Generator_Label" Content="Generator" HorizontalAlignment="Left" Margin="32,111,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="Settings_Text_1" Content="Set your password length using the slider." HorizontalAlignment="Left" Margin="32,309,0,0" VerticalAlignment="Top" Width="328" Height="30"/>
+        <Label x:Name="Settings_Text_2" Content="The more the length will increase, the more stronger password will be generated." HorizontalAlignment="Left" Margin="32,324,0,0" VerticalAlignment="Top" Width="446" Height="30"/>
+        <Label x:Name="Settings_Text_3" Content="You can choose between 8 to 64 at maximum. Default is 16." HorizontalAlignment="Left" Margin="32,340,0,0" VerticalAlignment="Top" Width="446" Height="30"/>
+        <Label x:Name="Slider_ValueText" Content="{Binding ElementName=Password_Length_Slider, Path=Value}" ContentStringFormat="{}{0:#}" HorizontalAlignment="Left" Margin="182,398,0,0" VerticalAlignment="Top" Width="28" Height="43"/>
+        <Image x:Name="GitHub_Logo" HorizontalAlignment="Left" Height="16" Margin="42,437,0,0" VerticalAlignment="Top" Width="16" Source="/github.png"/>
+        <Label x:Name="GitHub_Profile_Username" Content="@MDIbnJihan" HorizontalAlignment="Left" Margin="58,432,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Current password length : " HorizontalAlignment="Left" Margin="38,397,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Symbol_Required_Checkbox" Content="Symbol" HorizontalAlignment="Left" Margin="292,402,0,0" VerticalAlignment="Top" Checked="Symbol_Required_Checkbox_Checked"/>
+
+    </Grid>
+</Window>
